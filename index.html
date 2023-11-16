@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     let solde=2000;
+     let montant;
+     let nouveauSolde;
+
+     let monChoix=prompt("1.Solde de mon compte" +"\n2.Transferer d'argent " +"\n3.Paiement de facture"+"\n4.Achat de credit"+ "\n5.Quitter");
+    //  Solde  du compte
+     function soldeCompte() {
+        if(monChoix == 1){
+            console.log("Votre solde est de :",solde);
+        }
+     }
+     soldeCompte()
+
+     // Transfert d'argent
+     function trnansfert(){
+        if (monChoix==2) {
+            let transfertargent=prompt("1. Saisir le montant"+"\n2.Quitter");
+            if(transfertargent==1) {
+            montant=prompt("Saisiser le montant de transfert");
+            if(montant<=solde){
+                nouveauSolde=solde-montant;
+                console.log("Le nouveau solde est de :",nouveauSolde);
+            }else{
+                console.log("Solde insiffusant");
+            }
+        } else if(monChoix==2){
+
+        }else{
+            console.log("Choix non disponible");
+        }
+        }
+    }
+     trnansfert()
+
+    //  Paiement de facture
+
+    function paiementFacture(){
+        if(monChoix==3){
+            let modePaiement=prompt("1. Liquide (Saisir le montant en entier )"+"\n2. Cheque (Saisir le montant enchaine de caractere)"+"\n3.Quitter");
+            if(modePaiement==1){
+                montant=prompt("saisir le montant en entier ");
+                if(montant<=solde){
+                    nouveauSolde=solde-montant;
+                    console.log("Le nouveau solde est :",nouveauSolde);
+                }else{
+                    console.log("Solde insiffusant");
+                }
+            }else if(modePaiement==2) {
+                montant=prompt("Saisisser le montant en chaine de caractere");
+
+            }else if (modePaiement==3) {
+                
+            }else{
+                console.log("Choix non disponible");
+            }
+        }
+    }
+    paiementFacture();
+
+
+// Achat de credit
+ function achaterCredit(){
+    if(monChoix==4){
+        let numero=prompt('Saisisser le numero beneficiaire de seddo');
+        
+        let montantSeddo=prompt("Saisisser le montant");
+        if(montantSeddo<=solde){
+            nouveauSolde=solde-montantSeddo;
+            console.log("Le nouveau solde est de :",nouveauSolde);
+        }else{
+            console.log("Solde insiffusant");
+        }
+    }
+ }
+ achaterCredit()
+    </script>
+</body>
+</html>
